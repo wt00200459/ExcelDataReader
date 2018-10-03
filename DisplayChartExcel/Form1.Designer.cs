@@ -28,102 +28,136 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.dataSet1 = new System.Data.DataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
+            this.sheetCombo = new System.Windows.Forms.ComboBox();
+            this.Sheet = new System.Windows.Forms.Label();
+            this.firstRowNamesCheckBox = new System.Windows.Forms.CheckBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // openFileDialog1
             // 
-            this.textBox1.Location = new System.Drawing.Point(19, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(432, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "xls|*.xls|xlsx|*.xlsx|csv|*.csv|All|*.*";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(457, 11);
+            this.button1.Location = new System.Drawing.Point(580, 50);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
+            this.button1.TabIndex = 0;
+            this.button1.Text = "select file";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(140, 50);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(434, 22);
+            this.textBox1.TabIndex = 1;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(457, 56);
+            this.button2.Location = new System.Drawing.Point(580, 91);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
+            this.button2.Text = "Process";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2Click);
             // 
-            // checkBox1
+            // dataSet1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(201, 44);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.dataSet1.DataSetName = "NewDataSet";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 94);
+            this.dataGridView1.Location = new System.Drawing.Point(63, 170);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(545, 181);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(971, 465);
+            this.dataGridView1.TabIndex = 3;
             // 
-            // comboBox1
+            // sheetCombo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(161, 67);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(180, 21);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.sheetCombo.FormattingEnabled = true;
+            this.sheetCombo.Location = new System.Drawing.Point(233, 135);
+            this.sheetCombo.Name = "sheetCombo";
+            this.sheetCombo.Size = new System.Drawing.Size(121, 24);
+            this.sheetCombo.TabIndex = 4;
+            this.sheetCombo.SelectedIndexChanged += new System.EventHandler(this.SheetComboSelectedIndexChanged);
             // 
-            // zedGraphControl1
+            // Sheet
             // 
-            this.zedGraphControl1.Location = new System.Drawing.Point(28, 291);
-            this.zedGraphControl1.Name = "zedGraphControl1";
-            this.zedGraphControl1.ScrollGrace = 0D;
-            this.zedGraphControl1.ScrollMaxX = 0D;
-            this.zedGraphControl1.ScrollMaxY = 0D;
-            this.zedGraphControl1.ScrollMaxY2 = 0D;
-            this.zedGraphControl1.ScrollMinX = 0D;
-            this.zedGraphControl1.ScrollMinY = 0D;
-            this.zedGraphControl1.ScrollMinY2 = 0D;
-            this.zedGraphControl1.Size = new System.Drawing.Size(540, 163);
-            this.zedGraphControl1.TabIndex = 6;
-            this.zedGraphControl1.UseExtendedPrintDialog = true;
+            this.Sheet.AutoSize = true;
+            this.Sheet.Location = new System.Drawing.Point(360, 138);
+            this.Sheet.Name = "Sheet";
+            this.Sheet.Size = new System.Drawing.Size(95, 17);
+            this.Sheet.TabIndex = 5;
+            this.Sheet.Text = "Choose sheet";
+            // 
+            // firstRowNamesCheckBox
+            // 
+            this.firstRowNamesCheckBox.AutoSize = true;
+            this.firstRowNamesCheckBox.Checked = true;
+            this.firstRowNamesCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.firstRowNamesCheckBox.Location = new System.Drawing.Point(343, 93);
+            this.firstRowNamesCheckBox.Name = "firstRowNamesCheckBox";
+            this.firstRowNamesCheckBox.Size = new System.Drawing.Size(231, 21);
+            this.firstRowNamesCheckBox.TabIndex = 6;
+            this.firstRowNamesCheckBox.Text = "first row contains column names";
+            this.firstRowNamesCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 681);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1183, 25);
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 20);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 474);
-            this.Controls.Add(this.zedGraphControl1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(1183, 706);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.firstRowNamesCheckBox);
+            this.Controls.Add(this.Sheet);
+            this.Controls.Add(this.sheetCombo);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,13 +165,18 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Data.DataSet dataSet1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private ZedGraph.ZedGraphControl zedGraphControl1;
+        private System.Windows.Forms.ComboBox sheetCombo;
+        private System.Windows.Forms.Label Sheet;
+        private System.Windows.Forms.CheckBox firstRowNamesCheckBox;
+       
+
     }
 }
 
