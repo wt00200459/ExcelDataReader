@@ -191,7 +191,7 @@ namespace TestApp
             InitializeComponent();
         }
 
-        /*
+        
         public static void GetValues(DataSet dataset, string sheetName)
         {
             foreach (DataRow row in dataset.Tables[sheetName].Rows)
@@ -202,7 +202,7 @@ namespace TestApp
                 }
             }
         }
-        */
+        
 
         private static IList<string> GetTablenames(DataTableCollection tables)
         {
@@ -283,7 +283,7 @@ namespace TestApp
             dataGridView1.DataSource = ds; // dataset
             dataGridView1.DataMember = tablename;
 
-            // GetValues(ds, tablename);
+             GetValues(ds, tablename);
         }
 
         private void SheetComboSelectedIndexChanged(object sender, EventArgs e)
